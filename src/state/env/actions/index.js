@@ -3,12 +3,11 @@ import {
   GET_ENV_SUCCESS,
   GET_ENV_ERROR
 } from "../actionTypes";
-import axios from "axios";
+import { getEnv } from "../../../api";
 export function updateEnv() {
   return (dispatch, getState) => {
     dispatch({ type: GET_ENV_REQUESTED, payload: { isLoading: true } });
-    return axios
-      .get(process.env.API_ROOT)
+    return getEnv()
       .then(res => {
         dispatch({
           type: GET_ENV_SUCCESS,
