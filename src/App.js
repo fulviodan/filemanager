@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { Route, Switch } from "react-router";
 import { ConnectedRouter } from "connected-react-router";
-import Home from "./screens/Home";
+import ViewFiles from "./screens/ViewFiles";
 import { updateEnv } from "./state/env/actions";
 
 function App({ updateEnv, env, history }) {
@@ -14,7 +14,7 @@ function App({ updateEnv, env, history }) {
     !!env.data && (
       <ConnectedRouter history={history}>
         <Switch>
-          <Route exact path="/" component={Home} />
+          <Route exact path="/" component={ViewFiles} />
           <Route render={() => <div>Miss</div>} />
         </Switch>
       </ConnectedRouter>

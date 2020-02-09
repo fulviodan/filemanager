@@ -6,12 +6,14 @@ import logger from "redux-logger";
 // And use redux-batch as an example of adding enhancers
 import { reduxBatch } from "@manaflair/redux-batch";
 import envReducer from "./env/reducer";
+import fileSystemReducer from "./fileSystem/reducer";
 
 const history = createBrowserHistory();
 
 const reducer = {
   router: connectRouter(history),
-  env: envReducer
+  env: envReducer,
+  fileSystem: fileSystemReducer
 };
 const middleware = [...getDefaultMiddleware(), routerMiddleware(history)];
 
