@@ -3,6 +3,8 @@ import {
   GET_ENV_SUCCESS,
   GET_ENV_ERROR
 } from "../actionTypes";
+import axios from "axios";
+
 import { getEnv } from "../../../api";
 export function updateEnv() {
   return (dispatch, getState) => {
