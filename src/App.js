@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { Route, Switch } from "react-router";
 import { ConnectedRouter } from "connected-react-router";
-import ViewFiles from "./screens/ViewFiles";
 import { updateEnv } from "./state/env/actions";
 import styled from "styled-components";
 import Navigation from "./components/Navigation";
@@ -20,7 +19,13 @@ function App({ updateEnv, env, router, history }) {
     if (isEnvLoaded) {
       listFiles({ env, path: router.location.pathname });
     }
-  }, [isEnvLoaded, router.location.pathname]);
+  }, [isEnvLoaded]);
+
+  useEffect(() => {
+    if (isEnvLoaded) {
+      listFiles({ env, path: router.location.pathname });
+    }
+  }, [router.location.pathname]);
   return (
     !env.isLoading &&
     !!env.data && (
