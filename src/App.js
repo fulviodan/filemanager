@@ -3,13 +3,13 @@ import { connect } from "react-redux";
 import { Route, Switch } from "react-router";
 import { ConnectedRouter } from "connected-react-router";
 import { updateEnv } from "./state/env/actions";
+import { fetchEntriesInPath } from "./state/fileSystem/actions";
 import styled from "styled-components";
 import Navigation from "./components/Navigation";
 import SearchBar from "./components/SearchBar";
 import Grid from "./components/Grid";
-import { listFiles } from "./api";
 
-function App({ updateEnv, env, router, history }) {
+function App({ updateEnv, listFiles, env, router, history }) {
   const isEnvLoaded = !!env.data;
   useEffect(() => {
     updateEnv();
@@ -69,6 +69,9 @@ function mapDispatchToProps(dispatch) {
   return {
     updateEnv() {
       return dispatch(updateEnv());
+    },
+    listFiles(payload) {
+      return dispatch(fetchEntriesInPath(payload));
     }
   };
 }
