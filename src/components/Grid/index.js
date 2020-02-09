@@ -15,15 +15,15 @@ import Add from "../Add";
 import FolderIcon from "../../assets/img/folder.png";
 
 class Grid extends Component {
-  componentDidMount() {
-    if (
-      !Object.keys(this.props.fileSystem).includes(
-        md5(this.props.location.pathname + FOLDER)
-      )
-    ) {
-      this.props.history.push("/");
-    }
-  }
+  // componentDidMount() {
+  //   if (
+  //     !Object.keys(this.props.fileSystem).includes(
+  //       md5(this.props.location.pathname + FOLDER)
+  //     )
+  //   ) {
+  //     this.props.history.push("/");
+  //   }
+  // }
 
   // shouldComponentUpdate(nextProps, nextState) {
   //   if (this.props.location.pathname === nextProps.location.pathname) {
