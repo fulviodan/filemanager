@@ -5,13 +5,13 @@ import { Provider } from "react-redux";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";
 
-import { createStore } from "./state/storeFactory";
+import { createStore, history } from "./state/storeFactory";
 
 const store = createStore();
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <App history={history} />
   </Provider>,
   document.getElementById("root")
 );
