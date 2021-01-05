@@ -11,7 +11,7 @@
     "@babel/runtime": "^7.8.3",
     "@manaflair/redux-batch": "^1.0.0",
     "@reduxjs/toolkit": "^1.2.3",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "connected-react-router": "^6.7.0",
     "cssnano": "^4.1.10",
     "ds4biz-components": "0.0.6",
